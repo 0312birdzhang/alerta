@@ -1,0 +1,23 @@
+<link href='http://fonts.googleapis.com/css?family=Sintony:700' rel='stylesheet' type='text/css'>
+<table class="alert"  style="width:{{ width }}px">
+  <tr><th class="{{ max_severity_class }}" colspan="6">{{ label }}</th></tr>
+  <tr>
+    <td class="{{ 'severity-critical' if severity_count['critical'] }}"><b>{{ severity_count['critical'] }}</b></td>
+    <td class="{{ 'severity-major' if severity_count['major'] }}"><b>{{ severity_count['major'] }}</b></td>
+    <td class="{{ 'severity-minor' if severity_count['minor'] }}"><b>{{ severity_count['minor'] }}</b></td>
+    <td class="{{ 'severity-warning' if severity_count['warning'] }}"><b>{{ severity_count['warning'] }}</b></td>
+    <td class="{{ 'severity-normal' if severity_count['normal'] }}"><b>{{ severity_count['normal'] }}</b></td>
+  </tr>
+</table>
+<style>
+  .severity-critical{background-color: red;}
+  .severity-major{background-color: orange;}
+  .severity-minor {background-color: yellow;}
+  .severity-warning {background-color: #1E90FF;}
+  .severity-normal, .severity-cleared, .severity-ok, .severity-informational {background-color: #00CC00;}
+  .severity-debug {background-color: #7554BF;}
+  table.alert {font-family: 'Sintony', 'Helvetica Neue',v'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 20px; line-height: {{ height // 2 }}px;}
+  tr {vertical-align: middle; border-top: 1px solid grey;}
+  td {text-align: center; background-color: lightgray;}
+</style>

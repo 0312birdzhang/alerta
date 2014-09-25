@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Alerta oEmbed Example</title>
+
+    <script>
+        var videoUrl = 'http://localhost:8080/alerts';
+        var endpoint = 'http://localhost:8080/statuses/oembed.json';
+        var callback = 'embedAlerta';
+        var url = endpoint + '?url=' + encodeURIComponent(videoUrl) + '&callback=' + callback + '&maxwidth=400&maxheight=100&label=Foo+Bar';
+        function embedAlerta(alerts) {
+            document.getElementById('embed').innerHTML = unescape(video.html);
+        }
+        function init() {
+            var js = document.createElement('script');
+            js.setAttribute('type', 'text/javascript');
+            js.setAttribute('src', url);
+            document.getElementsByTagName('head').item(0).appendChild(js);
+        }
+        window.onload = init;
+    </script>
+
+</head>
+<body>
+
+    <h1>Alerts oEmbed Example</h1>
+    <div id="embed">Loading alerts...</div>
+
+</body>
+</html>
